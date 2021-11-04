@@ -11,4 +11,26 @@ combines ideas from:
 
 ## To run (tested withnode 16.10.0)
 
+create an account on a TURN/STUN service, for example Xirsys:
+
+- create static TURN credentials
+- using the provided `iceservers` config, create `public/js/config.js` which looks like
+
+```
+turnConfig = {
+  iceServers: [
+    { urls: ["stun:ws-turn4.xirsys.com"] },
+    {
+      username:
+        "",
+      credential: "",
+      urls: [
+        "turn:ws-turn1.xirsys.com:80?transport=udp",
+        ...
+      ],
+    },
+  ],
+};
+```
+
 node index.js
